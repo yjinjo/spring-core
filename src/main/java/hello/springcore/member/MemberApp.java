@@ -1,4 +1,4 @@
-package hello.springcore;
+package hello.springcore.member;
 
 import hello.springcore.member.Grade;
 import hello.springcore.member.Member;
