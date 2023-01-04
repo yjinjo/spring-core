@@ -1,5 +1,6 @@
 package hello.springcore.order;
 
+import hello.springcore.AppConfig;
 import hello.springcore.member.Grade;
 import hello.springcore.member.Member;
 import hello.springcore.member.MemberService;
@@ -8,8 +9,10 @@ import hello.springcore.member.MemberServiceImpl;
 public class OrderApp {
 
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
 
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
