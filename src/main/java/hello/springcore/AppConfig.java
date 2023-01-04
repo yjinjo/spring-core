@@ -2,6 +2,7 @@ package hello.springcore;
 
 import hello.springcore.discount.DiscountPolicy;
 import hello.springcore.discount.FixDiscountPolicy;
+import hello.springcore.discount.RateDiscountPolicy;
 import hello.springcore.member.MemberRepository;
 import hello.springcore.member.MemberService;
 import hello.springcore.member.MemberServiceImpl;
@@ -14,7 +15,7 @@ public class AppConfig {
     public MemberService memberService() {
         return new MemberServiceImpl(memberRepository());
     }
-    
+
     public OrderService orderService() {
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
@@ -24,6 +25,6 @@ public class AppConfig {
     }
 
     private DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 }
